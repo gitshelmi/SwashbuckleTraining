@@ -1,0 +1,460 @@
+{
+	"info": {
+		"_postman_id": "48f2dbed-4fa2-4047-9f49-6da0baaafe9f",
+		"name": "Queries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetTenantsAsyncV1_ShourdReturnDevelopersAnd200",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:41711/api/v1/developers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "41711",
+					"path": [
+						"api",
+						"v1",
+						"developers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTenantsAsyncV2_ShourdReturnDevelopersWithDoBAnd200",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:41711/api/v2/developers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "41711",
+					"path": [
+						"api",
+						"v2",
+						"developers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTenantsAsyncV1_XMLResponseType_ShourdXMLAnd200",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:41711/api/v1/developers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "41711",
+					"path": [
+						"api",
+						"v1",
+						"developers"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "http://localhost:41711/api/developers/id/d28888e9-2ba9-473a-a40f-e38cb54f9b35",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTenantAsyncV1_ValidId_ShourdReturnDeveloperAnd200",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:41711/api/v1/developers/d902b665-1190-4c70-9915-b9c2d7680450",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "41711",
+					"path": [
+						"api",
+						"v1",
+						"developers",
+						"d902b665-1190-4c70-9915-b9c2d7680450"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "http://localhost:41711/api/developers/id/d28888e9-2ba9-473a-a40f-e38cb54f9b35",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTenantsAsyncV1_InvalidResponseType_ShourdReturn406",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/NA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:41711/api/v1/developers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "41711",
+					"path": [
+						"api",
+						"v1",
+						"developers"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "http://localhost:41711/api/developers/id/d28888e9-2ba9-473a-a40f-e38cb54f9b35",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddDeveloperAsyncV1_ValidContent_ShoudCreateProjectAndReturn201",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Margaery\",\r\n    \"lastName\": \"Tyrell\",\r\n    \"dateOfBirth\": \"1653-01-01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:41711/api/v1/developers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "41711",
+					"path": [
+						"api",
+						"v1",
+						"developers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddDeveloperAsyncV1_InvalidContent_ShoudFailAndReturn400",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"Margaery\",\r\n    \"lastName\": \"Tyrell\",\r\n    \"dateOfBirth\": \"InvalidDate\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:41711/api/v1/developers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "41711",
+					"path": [
+						"api",
+						"v1",
+						"developers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProjectsAsyncV1_ValidDeveloperId_ShourdReturnProjectsAnd200",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:41711/api/v1/developers/da2fd609-d754-4feb-8acd-c4f9ff13ba96/projects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "41711",
+					"path": [
+						"api",
+						"v1",
+						"developers",
+						"da2fd609-d754-4feb-8acd-c4f9ff13ba96",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProjectsAsyncV1_ValidIds_ShourdReturnProjectAnd200",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:41711/api/v1/developers/da2fd609-d754-4feb-8acd-c4f9ff13ba96/projects/d28888e9-2ba9-473a-a40f-e38cb54f9ba2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "41711",
+					"path": [
+						"api",
+						"v1",
+						"developers",
+						"da2fd609-d754-4feb-8acd-c4f9ff13ba96",
+						"projects",
+						"d28888e9-2ba9-473a-a40f-e38cb54f9ba2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProjectsAsyncV1_InvalidDeveloperId_ShouldReturn404",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:41711/api/v1/developers/da2fd609-d754-4feb-8acd-c4f9ff13ba97/projects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "41711",
+					"path": [
+						"api",
+						"v1",
+						"developers",
+						"da2fd609-d754-4feb-8acd-c4f9ff13ba97",
+						"projects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddProjectsAsyncV1_ValidIds_ShourdCreateProjectAndReturn201",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\":\"Azure Basics Training\",\r\n    \"Description\":\"A basic training for Azure\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:41711/api/v1/developers/da2fd609-d754-4feb-8acd-c4f9ff13ba96/projects/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "41711",
+					"path": [
+						"api",
+						"v1",
+						"developers",
+						"da2fd609-d754-4feb-8acd-c4f9ff13ba96",
+						"projects",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateProjectsAsyncV1_SameNameAndDescription_ShourdFailAndReturn400",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Docker Training\",\r\n    \"description\": \"Docker Training\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:41711/api/v1/developers/da2fd609-d754-4feb-8acd-c4f9ff13ba96/projects/d28888e9-2ba9-473a-a40f-e38cb54f9ba2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "41711",
+					"path": [
+						"api",
+						"v1",
+						"developers",
+						"da2fd609-d754-4feb-8acd-c4f9ff13ba96",
+						"projects",
+						"d28888e9-2ba9-473a-a40f-e38cb54f9ba2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateProjectsAsyncV1_ValidInput_ShouldReturn204",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Docker Training\",\r\n    \"description\": \"A great Docker Training.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:41711/api/v1/developers/da2fd609-d754-4feb-8acd-c4f9ff13ba96/projects/d28888e9-2ba9-473a-a40f-e38cb54f9ba2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "41711",
+					"path": [
+						"api",
+						"v1",
+						"developers",
+						"da2fd609-d754-4feb-8acd-c4f9ff13ba96",
+						"projects",
+						"d28888e9-2ba9-473a-a40f-e38cb54f9ba2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
